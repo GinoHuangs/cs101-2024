@@ -28,4 +28,5 @@ int main(){
     for(int i=0;i<3;i++){
         printf("%f ",rc[i]);
     }
+    return 0;
 }
