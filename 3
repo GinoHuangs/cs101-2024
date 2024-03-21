@@ -1,0 +1,28 @@
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+int main()
+{
+    FILE *file;
+    int mainline=-1;
+    int leadline=0;
+    char line[1000];
+    file = fopen("main3.c","r");
+    if(file == NULL){
+        printf("ERROR");
+        return 1;
+    }
+    while(fgets(line,sizeof(line),file) != NULL){
+        leadline++;
+        if(strstr(line,"int main()") != NULL){
+            mainline=leadline;
+            break;
+        }
+    }
+    fclose(file);
+    file = fopen("main3.txt","w");
+    fprintf(file,"%d",mainline);
+    fclose(file);
+    return 0;
+}
