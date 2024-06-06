@@ -4,8 +4,8 @@
 int main() {
     char a[100];
     scanf("%s", a);
-    int len = strlen(a);
-    for (int i = len-1; i>=0; i--) {
+    int len = strlen(a);    //取字元數 若abc = 3
+    for (int i = len-1; i>=0; i--) {    //i=2 to 0, 做3次
         printf("%c", a[i]); 
     }
     printf("\n");
